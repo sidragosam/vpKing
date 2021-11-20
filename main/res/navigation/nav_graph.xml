@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/title_fragment">
+
+    <fragment
+        android:id="@+id/title_fragment"
+        android:name="com.example.vpking.TitleFragment"
+        android:label="VP title"
+        tools:layout = "@layout/title_fragment">
+        <action
+            android:id="@+id/action_title_fragment_to_vp_fragment"
+            app:destination="@id/vizipipa_page" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/vizipipa_page"
+        android:name="com.example.vpking.vizipipak.VizipipaFragment"
+        android:label="VP page"
+        tools:layout="@layout/vizipipa_page">
+        <action
+            android:id="@+id/action_vp_fragment_to_title_fragment"
+            app:destination="@id/title_fragment" />
+        <action
+            android:id="@+id/action_vizipipa_page_to_vizipipaAddFragment"
+            app:destination="@id/vizipipaAddFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vizipipaAddFragment"
+        android:name="com.example.vpking.vizipipak.VizipipaAddFragment"
+        android:label="vizipipa_add_page"
+        tools:layout="@layout/vizipipa_add_page" >
+        <action
+            android:id="@+id/action_vizipipaAddFragment_to_vizipipa_page"
+            app:destination="@id/vizipipa_page" />
+    </fragment>
+</navigation>
